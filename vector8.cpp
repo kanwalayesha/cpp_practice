@@ -9,15 +9,22 @@ int main()
  cin>>choice;
  int input;
  vector<int> vec;
- vector<int> ::reverse_iterator it;
+ vector<int> ::iterator it;
  for(int i=0;i<choice;i++)
  {
  cout<<"Enter the value : "<<i+1<<" "<<endl;
  cin>>input;
  vec.push_back(input);
  }
- cout<<"Reverse of the number is : "<<endl;
- for(it=vec.rbegin();it!=vec.rend();it++)
+ cout<<"Removed 20 occurrences: "<<endl;
+ for(it=vec.begin();it!=vec.end();it++)
+ {
+    if((*it)==20)
+    {
+        vec.erase(it);
+    }
+ }
+ for(it=vec.begin();it!=vec.end();it++)
  {
     cout<<(*it)<<"\t"<<endl;
  }
